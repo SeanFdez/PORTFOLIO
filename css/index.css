@@ -1,3 +1,4 @@
+/* Este es el reset */
 * {
     margin: 0;
     padding: 0;
@@ -31,11 +32,11 @@ svg {
 }
 
 :root {
+    /* En el root añado los tres colores a usar en la web */
     font-size: 100%;
     scroll-behavior: smooth;
     --negro: #141414;
     --blanco: #F7F7F7;
-    --azul:#01afff;
     --verde: #30E80A;
 }
 
@@ -43,6 +44,7 @@ body {
     hyphens: none;
     position: relative;
     background-color: var(--negro);
+    /* La tipografia utilizada para la web es Georama, una sans-serif muy versatil  */
     font-family: "Georama", sans-serif;
     scroll-behavior: smooth;
 }
@@ -56,18 +58,25 @@ h6 {
     font-size: inherit;
     font-weight: inherit;
 }
-.Fondo{
+
+/* Coloco el fondo en fixed para que siempre esté en pantalla y al bajar la web siga */
+.Fondo {
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: -1;
 }
-.Fondo-video{
+
+.Fondo-video {
     height: 100%;
 }
-.Header-wrap{
-    min-height: 90px;
+
+/* Estas son las caracteristicas generales del header, incluyendo el color de fondo y el borde*/
+.Header-wrap {
+    min-height: 5.625rem;
     width: 100%;
     background-color: var(--blanco);
-    border-bottom:.3125rem solid var(--verde);
+    border-bottom: .3125rem solid var(--verde);
     border-radius: 0rem 0rem 1.5625rem 1.5625rem;
     padding: 1.25rem;
     display: flex;
@@ -78,45 +87,56 @@ h6 {
     position: relative;
     z-index: 1;
 }
-.Header-h1{
+
+/*Doy un tamaño máximo al logo para que en ordenador no se vea demasiado grande  */
+.Header-h1 {
     width: 50%;
-    max-width: 120px;
+    max-width: 7.5rem;
 }
-.Header-menu{
+
+.Header-menu {
     width: 3.125rem;
     height: 3.125rem;
     display: flex;
     position: relative;
 }
-.Header-barra{
+
+.Header-barra {
     width: 3.125rem;
     background-color: var(--negro);
     height: .3125rem;
     position: absolute;
     transition: all .5s ease;
 }
-.Header-barra--arriba{
+
+/* Aqui creo los atributos de las barras del menú y su rotación cuando está activo el menú */
+.Header-barra--arriba {
     top: .9375rem;
     left: 0;
 }
-.Header-barra--abajo{
+
+.Header-barra--abajo {
     bottom: .9375rem;
     left: 0;
 }
-.Header-menu.Activo .Header-barra--abajo{
+
+.Header-menu.Activo .Header-barra--abajo {
     transform: rotate(-45deg);
     bottom: 1.375rem;
 }
-.Header-menu.Activo .Header-barra--arriba{
+
+.Header-menu.Activo .Header-barra--arriba {
     transform: rotate(45deg);
     top: 1.375rem;
 }
-.Header-ul{
-    min-height: 40px;    
+
+/* Aqui creo las caracteristicas del Header-ul para que al activarlo haga la animación  */
+.Header-ul {
+    min-height: 2.5rem;
     width: 100%;
-    margin: 0px 0px;
-    padding: 0px 10px;
-    top: 85px;
+    margin: 0rem 0rem;
+    padding: 0rem .625rem;
+    top: 5.3125rem;
     left: 0;
     position: absolute;
     display: flex;
@@ -128,22 +148,27 @@ h6 {
 
     opacity: 0;
     pointer-events: none;
-    transition: all .5s ease;
+    transition: top .5s ease, opacity .5s ease, pointer-events .5s ease;
 }
-.Header-ul.Activo{
+
+.Header-ul.Activo {
     top: 105px;
     opacity: 1;
     pointer-events: all;
 }
-.Header-a{
+
+.Header-a {
     padding: 15px;
     transition: filter .5s ease;
 }
-.Header-a:hover{
-    filter: drop-shadow(5px 5px 1px var(--verde));
+
+.Header-a:hover {
+    filter: drop-shadow(.3125rem .3125rem .0625rem var(--verde));
 }
-.Main{
-    margin: 0px auto;
+
+/* Aqui ya empiezo con el estilo del main */
+.Main {
+    margin: 0rem auto;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -152,52 +177,63 @@ h6 {
 
     transition: margin .5s ease;
 }
-.Main.Activo{
-    margin: 50px auto;
+
+/* Cuando está Activo, el main se desplaza hacioa abajo para dar espacio al menú de navegación */
+.Main.Activo {
+    margin: 3.125rem auto;
 }
-.Main-section{
+
+.Main-section {
     width: 100%;
-    max-width: 1500px;
-    margin: 100px auto;
+    max-width: 93.75rem;
+    margin: 6.25rem auto;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 }
-.Hero{
+
+.Hero {
     width: 100%;
-    position: relative;
 }
-.Hero-wrap{
+
+/* Aqui va el hero con el logo y la descripción, además de los efectos al hacer hover */
+.Hero-wrap {
     width: 100%;
-    min-height: 500px;
+    min-height: 31.25rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 2.5rem;
     color: var(--blanco);
 }
-.Hero-svg{
+
+.Hero-svg {
     width: 80vw;
-    max-width: 700px;
+    max-width: 43.75rem;
     display: flex;
-    filter: drop-shadow(0px 0px 0px var(--verde));
+    filter: drop-shadow(0rem 0rem 0rem var(--verde));
     transition: filter .5s ease;
 }
-.Hero-svg:hover{
-    filter: drop-shadow(10px 10px 2px var(--verde));
+
+.Hero-svg:hover {
+    filter: drop-shadow(.625rem .625rem .125rem var(--verde));
 }
-.Hero-p{
+
+.Hero-p {
     font-size: 2rem;
     text-transform: uppercase;
-    filter: drop-shadow(0px 0px 0px var(--verde));
+    filter: drop-shadow(0rem 0rem 0rem var(--verde));
     transition: filter .5s ease;
 }
-.Hero-p:hover{
-    filter: drop-shadow(10px 10px 2px var(--verde));
+
+.Hero-p:hover {
+    filter: drop-shadow(.625rem .625rem .125rem var(--verde));
 }
-.Main-h3{
+
+/* Aqui van los elementos de las diferentes categorias */
+.Main-h3 {
     color: var(--blanco);
     text-align: center;
     font-size: 2rem;
@@ -205,168 +241,196 @@ h6 {
     font-weight: 700;
 }
 
-.Main-wrap{
+.Main-wrap {
     width: 90%;
     height: 100%;
-    margin: 20px 0px;
-    padding: 20px;
+    margin: 1.25rem 0rem;
+    padding: 1.25rem;
     background-color: var(--blanco);
-    border-radius: 25px;
-    border-bottom:5px solid var(--verde);
+    border-radius: 1.5625rem;
+    border-bottom: .3125rem solid var(--verde);
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
     align-items: start;
-    gap: 20px;
+    gap: 1.25rem;
 }
-.Main-p{
+
+.Main-p {
     font-size: 1.1rem;
     font-weight: 300;
 }
-.Main-h4{
+
+.Main-h4 {
     color: var(--blanco);
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
 }
-.Main-ul{
+
+.Main-ul {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
 }
-.Main-svg{
+
+.Main-svg {
     fill: var(--blanco);
-    max-width: 150px;
+    max-width: 9.375rem;
 
     transition: filter .5s ease;
 }
-.Main-svg:hover{
-    filter: drop-shadow(2px 2px 2px var(--verde))
+
+.Main-svg:hover {
+    filter: drop-shadow(.125rem .125rem .125rem var(--verde))
 }
-.Main-container{
+
+.Main-container {
     width: 90%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: .625rem;
 }
-.Proyecto{
-    min-height: 700px;
+
+.Proyecto {
+    min-height: 43.75rem;
     justify-content: space-between;
 }
-.Proyecto-img{
+/*Al hacer hover sobre el proyecto, la imagen deja de estar en blanco y negro y se ve con mas opacidad, cuando no está hover, casi no se ve. */
+.Proyecto-img {
     filter: grayscale(1) opacity(0.2);
     transition: filter .5s ease;
 }
-.Proyecto:hover .Proyecto-img{
+
+.Proyecto:hover .Proyecto-img {
     filter: grayscale(0) opacity(1);
 }
 
-.Proyecto-h5{
+.Proyecto-h5 {
     width: 100%;
     text-align: center;
     font-size: 1.3rem;
     font-weight: 600;
 }
-.Proyecto-boton{
+
+.Proyecto-boton {
     width: 100%;
     background-color: var(--verde);
     text-align: center;
-    border-radius: 25px;
-    border-bottom: 4px solid var(--negro);
+    border-radius: 1.5625rem;
+    border-bottom: .25rem solid var(--negro);
     transition: border-bottom .5s ease;
 }
-.Proyecto-boton:hover{
+
+.Proyecto-boton:hover {
     border-bottom: 10px solid var(--negro);
 }
-.Proyecto-a{
+
+.Proyecto-a {
     padding: 15px;
 }
-.Contacto-wrap{
+/* Aqui se hace lo mismo que con proyecto pero en el apartado de contacto */
+.Contacto-wrap {
     width: 100%;
-    min-height: 150px;
+    min-height: 9.375rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
 }
-.Contacto-boton{
+
+.Contacto-boton {
     width: calc(100% / 3);
-    max-width: 450px;
+    max-width: 28.125rem;
     background-color: var(--verde);
 
-    border-radius: 25px;
-    border-bottom: 4px solid var(--negro);
+    border-radius: 1.5625rem;
+    border-bottom: .25rem solid var(--negro);
     transition: border-bottom .5s ease;
 }
-.Contacto-boton:hover{
-    border-bottom: 10px solid var(--negro);
+
+.Contacto-boton:hover {
+    border-bottom: .625rem solid var(--negro);
 }
-.Contacto-svg{
-    max-width: 30px;
+
+.Contacto-svg {
+    max-width: 1.875rem;
 }
-.Contacto-a{
-    padding: 15px;
+
+.Contacto-a {
+    padding: .9375rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 1.875rem;
 }
-.Footer{
-    padding: 15px;
+
+.Footer {
+    padding: .9375rem;
     color: var(--verde);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
 }
-@media (max-width:800px){
-    .Header-ul{
+/* Aqui va el responsive, solo uso un media query porque la estructura de la web hace que no sean necesarisd muchas adaptaciones */
+@media (max-width:800px) {
+    .Header-ul {
         flex-flow: column nowrap;
         justify-content: space-between;
         align-items: center;
-        gap: 0px;
+        gap: 0rem;
     }
-    .Main.Activo{
-        margin: 120px auto;
+
+    .Main.Activo {
+        margin: 7.5rem auto;
     }
-    .Hero-p{
+
+    .Hero-p {
         text-align: center;
         font-size: 1.5rem;
     }
-    .Main-section{
+
+    .Main-section {
         width: 100%;
-        margin: 50px auto;
+        margin: 3.125rem auto;
     }
-    .Main-ul{
+
+    .Main-ul {
         width: 80%;
     }
-    .Main-container{
+
+    .Main-container {
         width: 100%;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: .625rem;
     }
-    .Proyecto-img{
+    
+    .Proyecto-img {
         filter: none;
     }
-    .Proyecto{
-        min-height: 600px;
+
+    .Proyecto {
+        min-height: 37.5rem;
     }
-    .Contacto-wrap{
+
+    .Contacto-wrap {
         flex-flow: column nowrap;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: 1.25rem;
     }
-    .Contacto-boton{
+
+    .Contacto-boton {
         width: 100%;
     }
 
