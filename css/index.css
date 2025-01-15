@@ -159,6 +159,10 @@ h6 {
     width: 100%;
     max-width: 1500px;
     margin: 100px auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 .Hero{
     width: 100%;
@@ -202,8 +206,9 @@ h6 {
 }
 
 .Main-wrap{
+    width: 90%;
     height: 100%;
-    margin: 20px;
+    margin: 20px 0px;
     padding: 20px;
     background-color: var(--blanco);
     border-radius: 25px;
@@ -226,6 +231,7 @@ h6 {
     font-weight: 400;
 }
 .Main-ul{
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -242,6 +248,7 @@ h6 {
     filter: drop-shadow(2px 2px 2px var(--verde))
 }
 .Main-container{
+    width: 90%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -287,6 +294,7 @@ h6 {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 .Contacto-boton{
     width: calc(100% / 3);
@@ -336,7 +344,11 @@ h6 {
         width: 100%;
         margin: 50px auto;
     }
+    .Main-ul{
+        width: 80%;
+    }
     .Main-container{
+        width: 100%;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
