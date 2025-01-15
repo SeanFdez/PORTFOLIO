@@ -256,7 +256,7 @@ h6 {
     gap: 10px;
 }
 .Proyecto{
-    min-height: 650px;
+    min-height: 700px;
     justify-content: space-between;
 }
 .Proyecto-img{
@@ -334,7 +334,7 @@ h6 {
         gap: 0px;
     }
     .Main.Activo{
-        margin: 100px auto;
+        margin: 120px auto;
     }
     .Hero-p{
         text-align: center;
